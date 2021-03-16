@@ -5,9 +5,9 @@
   "main": "index.js",
   "homepage": "https://github.com/EECvision/Javascript-Development-Environment#readme",
   "scripts": {
-    "prestart": "node buildScripts/startMessage",
+    "prestart": "babel-node buildScripts/startMessage",
     "start": "npm-run-all --parallel open:src",
-    "open:src": "node buildScripts/srcServer",
+    "open:src": "babel-node buildScripts/srcServer",
     "test": "echo \"Error: no test specified\" && exit 1",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel"
