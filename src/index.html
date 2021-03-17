@@ -2,10 +2,22 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS_DEV_ENV</title>
+  <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script>
+      window.TrackJS && TrackJS.install({
+        token: '<%=htmlWebpackPlugin.options.trackJSToken%> '
+        // for more configuration options, see https://docs.trackjs.com
+      });
+    </script>\
+
+    <% } %>
+
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>JS_DEV_ENV</title>
 </head>
 
 <body>
@@ -22,7 +34,7 @@
 
     </tbody>
   </table>
-  <script src="bundle.js"></script>
+  <!-- <script src="bundle.js"></script> -->
 </body>
 
 </html>
